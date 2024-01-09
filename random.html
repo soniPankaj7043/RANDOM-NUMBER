@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            
+
+        }
+        .randamnumber{
+            width: fit-content;
+            padding: 40px;
+            margin-top: 100px;
+            margin-left: 400px;
+            border-radius: 5px;
+            background-color: lightgreen;
+        }
+        input[type="text"]{
+            padding: 16px;
+                        border-radius: 5px;
+            margin-left: 50px;
+            font-size: 20px;
+        }
+        h1{
+            font-size: 40px;
+            text-align: center;
+        }
+        button{
+            padding: 10px;
+            background-color: cornflowerblue;
+            color: whitesmoke;
+            border-radius: 5px;
+            font-size: 17px;
+            align-items: center;
+            margin-left: 117px;
+            margin-top: 20px;
+        }
+        p{
+            font-size: 20px;
+            text-align: center;
+            color: black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="randamnumber">
+        <h1>
+            Random Number Find
+        </h1>
+        <p>1 to 100 number enter</p>
+        <input type="text" id="inputnumber" placeholder="Enter number">
+        <br>
+        <br>
+        <button onclick="checkrandom()">Check number</button>
+        <br>
+        <p id="shownumber"></p>
+    </div>
+    <script>
+        function checkrandom(){
+            var inputnumber=document.getElementById('inputnumber').value;
+            var number=Math.floor(Math.random()*100);
+            if(number==inputnumber){
+                document.getElementById('shownumber').innerHTML=`Number are same  random is ${number} `;
+                document.getElementById('inputnumber').value='';
+            }
+            else if(number>inputnumber){
+                document.getElementById('shownumber').innerHTML=`Random number are greater than `;
+                document.getElementById('inputnumber').value='';
+            }
+            else if(number<inputnumber){
+                document.getElementById('shownumber').innerHTML=`Random number are less than`;
+                document.getElementById('inputnumber').value='';
+            }
+            
+        }
+    </script>
+</body>
+</html>
